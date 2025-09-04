@@ -1,0 +1,22 @@
+[project]
+name = "fia-mcp-server"
+version = "0.1.0"
+description = "FIA MCP Server"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dotenv>=0.9.9",
+    "fastmcp>=2.12.0",
+    "openai-agents>=0.2.9",
+]
+
+[project.scripts]
+server = "src.main:main"
+chatbot = "src.test.chat:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
